@@ -5,14 +5,14 @@ public abstract class Human {
     private String middleName;
     private String phoneNumber;
 
-    // Абстрактний метод, який буде визначений у похідних класах
+    
     public abstract String getInfo();
 
-    // Конструктор по замовчуванню
+   
     public Human() {
     }
 
-    // Параметризований конструктор
+   
     public Human(int id, String lastName, String firstName, String middleName, String phoneNumber) {
         this.id = id;
         this.lastName = lastName;
@@ -21,7 +21,7 @@ public abstract class Human {
         this.phoneNumber = phoneNumber;
     }
 
-    // Гетери та сетери для атрибутів
+    
     public int getId() {
         return id;
     }
