@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public class Teacher extends Human {
     private int id;
@@ -8,14 +8,14 @@ public class Teacher extends Human {
     private String dateOfBirth;
     private String phoneNumber;
     private String department;
-    private String[] subjects;
+    private String subjects;
 
 
     public Teacher() {
     }
 
 
-    public Teacher(int id, String lastName, String firstName, String middleName, String dateOfBirth, String phoneNumber, String department, String[] subjects) {
+    public Teacher(int id, String lastName, String firstName, String middleName, String dateOfBirth, String phoneNumber, String department, String subjects) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -35,7 +35,7 @@ public class Teacher extends Human {
         this.dateOfBirth = other.dateOfBirth;
         this.phoneNumber = other.phoneNumber;
         this.department = other.department;
-        this.subjects = other.subjects.clone();
+        this.subjects = other.subjects;
     }
 
 
@@ -95,11 +95,11 @@ public class Teacher extends Human {
         this.department = department;
     }
 
-    public String[] getSubjects() {
+    public String getSubjects() {
         return subjects;
     }
 
-    public void setSubjects(String[] subjects) {
+    public void setSubjects(String subjects) {
         this.subjects = subjects;
     }
 
@@ -114,7 +114,7 @@ public class Teacher extends Human {
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", department='" + department + '\'' +
-                ", subjects=" + Arrays.toString(subjects) +
+                ", subjects=" + subjects + '\'' +
                 '}';
     }
     public String getInfo() {

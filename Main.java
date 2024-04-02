@@ -11,14 +11,14 @@ public class Main {
         teacher1.setDateOfBirth("1990-05-15");
         teacher1.setPhoneNumber("123456789");
         teacher1.setDepartment("Mathematics");
-        teacher1.setSubjects(new String[]{"Algebra", "Geometry"});
+        teacher1.setSubjects("Algebra");
 
 
         System.out.println("Teacher 1:");
         System.out.println(teacher1);
 
 
-        Teacher teacher2 = new Teacher(2, "Johnson", "Anna", "Marie", "1985-03-20", "987654321", "Physics", new String[]{"Mechanics", "Electricity"});
+        Teacher teacher2 = new Teacher(2, "Johnson", "Anna", "Marie", "1985-03-20", "987654321", "Physics", "Mechanics");
 
 
         System.out.println("\nTeacher 2:");
@@ -30,7 +30,7 @@ public class Main {
 
         System.out.println("\nTeacher 3 (copy of Teacher 1):");
         System.out.println(teacher3);
-        Teacher teacher = new Teacher(1, "Smith", "John", "Doe", "1990-05-15", "123456789", "Mathematics", new String[]{"Algebra", "Geometry"});
+        Teacher teacher = new Teacher(1, "Smith", "John", "Doe", "1990-05-15", "123456789", "Mathematics", "Algebra");
 
 
         System.out.println("Teacher:");
@@ -46,8 +46,8 @@ public class Main {
         Human[] humans = new Human[4];
 
 
-        humans[0] = new Teacher(1, "Smith", "John", "Doe", "1990-05-15", "123456789", "Mathematics", new String[]{"Algebra", "Geometry"});
-        humans[1] = new Teacher(2, "Doe", "Jane", "Mary", "1985-10-20", "987654321", "Science", new String[]{"Physics", "Chemistry"});
+        humans[0] = new Teacher(1, "Smith", "John", "Doe", "1990-05-15", "123456789", "Mathematics","Algebra");
+        humans[1] = new Teacher(2, "Doe", "Jane", "Mary", "1985-10-20", "987654321", "Science", "Physics");
         humans[2] = new Student(101, "Johnson", "Michael", "David", "1998-03-12", "555123456", "Computer Science", 2, "CS101");
         humans[3] = new Student(102, "Brown", "Emma", "Elizabeth", "1997-07-25", "555987654", "Mathematics", 3, "Math201");
 
@@ -55,5 +55,8 @@ public class Main {
         for (Human human : humans) {
             System.out.println(human.toString());
         }
+
+
+        System.out.println(teacher.getInfo());
     }
 }

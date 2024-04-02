@@ -5,14 +5,14 @@ public abstract class Human {
     private String middleName;
     private String phoneNumber;
 
-    
+
     public abstract String getInfo();
 
-   
+
     public Human() {
     }
 
-   
+
     public Human(int id, String lastName, String firstName, String middleName, String phoneNumber) {
         this.id = id;
         this.lastName = lastName;
@@ -21,7 +21,7 @@ public abstract class Human {
         this.phoneNumber = phoneNumber;
     }
 
-    
+
     public int getId() {
         return id;
     }
@@ -62,7 +62,7 @@ public abstract class Human {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override
+
     public String toString() {
         return "Human{" +
                 "id=" + id +
