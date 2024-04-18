@@ -1,20 +1,17 @@
-import java.time.LocalDate;
-
-public class Student {
-    private Integer id;
+class Student extends Human implements Comparable<Student> {
+    private int id;
     private String lastName;
     private String firstName;
     private String middleName;
-    private LocalDate birthDate;
+    private String birthDate;
     private String phoneNumber;
     private String faculty;
-    private Integer course;
+    private int course;
     private String group;
 
-    private static Integer counter = 0;
 
-    public Student(Integer id, String lastName, String firstName, String middleName, LocalDate birthDate, String phoneNumber, String faculty, Integer course, String group) {
-        this.id = ++counter;
+    public Student(int id, String lastName, String firstName, String middleName, String birthDate, String phoneNumber, String faculty, int course, String group) {
+        this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -25,51 +22,12 @@ public class Student {
         this.group = group;
     }
 
-    public Student(Integer id, String lastName, String firstName, String middleName, LocalDate birthDate, String phoneNumber) {
-        this.id = ++counter;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.birthDate = birthDate;
-        this.phoneNumber = phoneNumber;
-    }
 
-    public Student(String faculty, Integer course, String group) {
-
-        this.faculty = faculty;
-        this.course = course;
-        this.group = group;
-    }
-
-    public Student() {
-        this.id = 0;
-        this.lastName = "";
-        this.firstName = "";
-        this.middleName = "";
-        this.birthDate = LocalDate.now();
-        this.phoneNumber = "";
-        this.faculty = "";
-        this.course = 0;
-        this.group = "";
-    }
-
-    public Student(Student other) {
-        this.id = other.id;
-        this.lastName = other.lastName;
-        this.firstName = other.firstName;
-        this.middleName = other.middleName;
-        this.birthDate = other.birthDate;
-        this.phoneNumber = other.phoneNumber;
-        this.faculty = other.faculty;
-        this.course = other.course;
-        this.group = other.group;
-    }
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -97,11 +55,11 @@ public class Student {
         this.middleName = middleName;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -121,11 +79,11 @@ public class Student {
         this.faculty = faculty;
     }
 
-    public Integer getCourse() {
+    public int getCourse() {
         return course;
     }
 
-    public void setCourse(Integer course) {
+    public void setCourse(int course) {
         this.course = course;
     }
 
@@ -137,6 +95,7 @@ public class Student {
         this.group = group;
     }
 
+
     @Override
     public String toString() {
         return "Student{" +
@@ -144,11 +103,22 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
-                ", birthDate=" + birthDate +
+                ", birthDate='" + birthDate + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", faculty='" + faculty + '\'' +
                 ", course=" + course +
                 ", group='" + group + '\'' +
                 '}';
     }
+    public String getInfo() {
+
+        return "Student Info: " + getLastName() + " " + getFirstName();
+    }
+
+    @Override
+    public int compareTo(Student otherTeacher) {
+        return this.lastName.compareTo(otherTeacher.lastName);
+    }
+
+
 }
